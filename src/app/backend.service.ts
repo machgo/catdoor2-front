@@ -5,11 +5,12 @@ import './rxjs-extensions';
 
 import { Door } from './Door';
 import { Event } from './Event';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class BackendService {
 
-  private serviceUrl = "http://localhost:8080/api/";
+  private serviceUrl = environment.backendUrl;
 
   constructor(private http: Http) { }
 
