@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import './rxjs-extensions';
 
 import { Door } from './Door';
+import { Event } from './Event';
 
 @Injectable()
 export class BackendService {
@@ -25,5 +26,10 @@ export class BackendService {
 
   setDoor(door: Door): Observable<Response> {
     return this.http.post(this.serviceUrl + 'door', door, this.getHeaders());
+  }
+
+  getEvents(): Observable<Event[]> {
+    return this.http.get(this.serviceUrl + 'events')
+      .map((r: Response) => r.json() as Event[]);
   }
 }

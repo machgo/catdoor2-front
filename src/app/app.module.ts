@@ -7,11 +7,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { BackendService } from './backend.service';
 import { DoorComponent } from './door/door.component';
+import { EventsComponent } from './events/events.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DoorComponent
+    DoorComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,

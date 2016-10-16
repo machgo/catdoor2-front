@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Datum</th>
+      <td>Sender</td>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let event of events">
+      <th scope="row">{{event.created_at | date:'short'}}</th>
+      <td>{{event.sender}}</td>
+      <td>{{event.name}}</td>
+    </tr>
+  </tbody>
+</table>
