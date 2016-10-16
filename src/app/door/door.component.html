@@ -1,4 +1,5 @@
 <div [(ngModel)]="door.unlocked" ngbRadioGroup name="radioBasic">
+  <div>{{getDoorStateString()}}</div>
   <label class="btn btn-primary" (click)="open()">
     <input type="radio" [value]="true"> Offen
   </label>

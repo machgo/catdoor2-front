@@ -14,6 +14,13 @@ export class DoorComponent implements OnInit {
 
   constructor(private backendService: BackendService) { }
 
+  getDoorStateString(): string {
+    if (this.door.unlocked){
+      return "Catdoor ist offen"
+    }
+    return "Catdoor ist geschlossen";
+  }
+
 
   ngOnInit() {
     this.backendService.getDoor()
