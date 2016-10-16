@@ -31,6 +31,17 @@ export class BackendService {
 
   getEvents(): Observable<Event[]> {
     return this.http.get(this.serviceUrl + 'events')
-      .map((r: Response) => r.json() as Event[]);
+      .map(this.readEvents);
+  }
+
+  private readEvents(res: Response) {
+    let body = res.json();
+    body.forEach(element => {
+      console.log(element);
+      if (element.has_data) {
+        element.data_link =  environment.backendUrl + 'uploads/' + element._id;
+      }
+    });
+    return body as Event[];
   }
 }

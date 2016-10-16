@@ -2,15 +2,19 @@
   <thead>
     <tr>
       <th>Datum</th>
-      <td>Sender</td>
       <th>Name</th>
+      <th>Bild</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let event of events">
       <th scope="row">{{event.created_at | date:'short'}}</th>
-      <td>{{event.sender}}</td>
       <td>{{event.name}}</td>
+      <td>
+        <div *ngIf="event.data_link">
+          <a href="{{event.data_link}}">Bild anschauen</a>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>
