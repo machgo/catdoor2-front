@@ -3,8 +3,8 @@ import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs';
 import './rxjs-extensions';
 
-import { Door } from './Door';
-import { Event } from './Event';
+import { Door } from './door';
+import { Event } from './event';
 import { environment } from '../environments/environment';
 
 @Injectable()
