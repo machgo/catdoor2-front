@@ -1,3 +1,18 @@
+<template ngbModalContainer></template>
+<template #content let-c="close" let-d="dismiss">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-header">
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+      <h4 class="modal-title">{{selectedEvent.created_at | date:'short'}}</h4>
+    </div>
+    <div class="modal-body">
+      <img class="photo" src="{{selectedEvent.data_link}}">
+    </div>
+  </div>
+</template>
+
 <table class="table">
   <thead>
     <tr>
@@ -12,7 +27,7 @@
       <td>{{event.name}}</td>
       <td>
         <div *ngIf="event.data_link">
-          <a href="{{event.data_link}}">Bild anschauen</a>
+          <button class="btn btn-lg btn-outline-primary" (click)="open(content,event)">Bild</button>
         </div>
       </td>
     </tr>
