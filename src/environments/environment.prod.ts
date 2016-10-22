@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendUrl: 'http://rancherapp.home.balou.in:3203/api/'
+  backendUrl: 'http://kubeapp.home.balou.in:32003/api/'
 };
