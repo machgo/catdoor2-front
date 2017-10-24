@@ -1,14 +1,15 @@
-FROM node:latest
+FROM node:6.11.4
 
 RUN apt-get update && apt-get install -y --no-install-recommends nginx-light
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-RUN npm install -g angular-cli
+RUN npm install -g @angular/cli
 
 COPY . /usr/src/app
-RUN ng build --prod -o /var/www/html/
+RUN npm install
+RUN ng build --prod --output-path /var/www/html/
 
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
