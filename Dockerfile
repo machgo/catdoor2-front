@@ -1,5 +1,5 @@
 FROM node:9.8.0
-ENV CATDOOR_VERSION 0.4.1
+ENV CATDOOR_VERSION 0.4.2
 
 RUN apt-get update && apt-get install -y --no-install-recommends nginx-light
 
