@@ -47,9 +47,9 @@ export default {
           label: "Details",
           formatter: (value, key, item) => {
             if (item.has_data) {
-              return "<a href='http://kubeapp.home.balou.in:32003/api/uploads/5aad3c4af7bee4000f4ad350'>Bild</a>";
+              return "<a href='http://kubeapp.home.balou.in:32003/api/uploads/" + item._id + "'>Bild</a>";
             }
-            return item.name;
+            return item.name;        
           }
         }
       ],
