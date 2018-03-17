@@ -3,13 +3,13 @@ services:
   - docker
 env:
   global:
-    - IMAGE_NAME=acme-corp/cake-service
-    - REGISTRY_USER=myrobot
+    - IMAGE_NAME=machgo/catdoor2-front
+    - REGISTRY_USER=machgo
     # REGISTRY_PASS=...
     - secret: "<something long>"
 
 before_script:
-  - version="$(awk '$2 == "CAKE_SERVICE_VERSION" { print $3; exit }' Dockerfile)"
+  - version="$(awk '$2 == "CATDOOR_VERSION" { print $3; exit }' Dockerfile)"
   - docker pull "$IMAGE_NAME" || true
 script:
   - docker build --pull --cache-from "$IMAGE_NAME" --tag "$IMAGE_NAME" .
