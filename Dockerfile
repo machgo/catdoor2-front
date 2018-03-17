@@ -1,5 +1,7 @@
 FROM node:9.8.0
 
+RUN apt-get update && apt-get install -y --no-install-recommends nginx-light
+
  RUN mkdir -p /usr/src/app
  WORKDIR /usr/src/app
 
