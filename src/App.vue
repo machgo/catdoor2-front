@@ -2,13 +2,13 @@
 <div>
   <b-navbar toggleable="md" type="dark" variant="info">
     <b-navbar-brand href="#">Catdoor 2</b-navbar-brand>
-    <b-nav-form> 
-      <b-button :pressed="unlocked" class="mr-5" variant="success">{{ unlocked ? "Offen" : "Geschlossen" }}</b-button>
-      <b-btn-group>
-        <b-button v-on:click="openDoor" class="my-2 my-sm-0" >Öffnen</b-button>
-        <b-button v-on:click="closeDoor" class="my-2 my-sm-0">Schliessen</b-button>
+    <div class="float-right">
+      <b-button disabled :pressed="unlocked" variant="success">{{ unlocked ? "Offen" : "Geschlossen" }}</b-button>
+      <b-btn-group class="ml-5">
+        <b-button v-on:click="openDoor" class="my-2 my-sm-0" variant="primary">Öffnen</b-button>
+        <b-button v-on:click="closeDoor" class="my-2 my-sm-0" variant="secondary">Schliessen</b-button>
       </b-btn-group>
-    </b-nav-form>
+    </div>
   </b-navbar>
   <b-alert :show="dismissCountDown"
             dismissible
@@ -22,7 +22,6 @@
                 height="4px">
     </b-progress>
   </b-alert>
-
 
   <b-table striped hover :items="events" :fields="fields"></b-table>
 </div>
@@ -52,7 +51,7 @@ export default {
             }
             return item.name;
           }
-        },
+        }
       ],
       events: [],
       dismissSecs: 5,
