@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends nginx-light
  RUN npm install
  RUN npm run build
 
+ RUN cp -r * /var/www/html/
+
  RUN ln -sf /dev/stdout /var/log/nginx/access.log \
  	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
